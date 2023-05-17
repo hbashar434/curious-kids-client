@@ -4,41 +4,61 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const navItems = (
     <>
-      <li className="mr-6">
+      <li className="mr-6  font-semibold">
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-gray-700"
+            isActive ? "text-pink-500" : "text-gray-600"
           }
         >
           Home
         </NavLink>
       </li>
-      <li className="mr-6">
+      <li className="mr-6  font-semibold">
+        <NavLink
+          to="/all-toys"
+          className={({ isActive }) =>
+            isActive ? "text-pink-500" : "text-gray-600"
+          }
+        >
+          All Toys
+        </NavLink>
+      </li>
+      <li className="mr-6  font-semibold">
+        <NavLink
+          to="/my-toys"
+          className={({ isActive }) =>
+            isActive ? "text-pink-500" : "text-gray-600"
+          }
+        >
+          My Toys
+        </NavLink>
+      </li>
+      <li className="mr-6  font-semibold">
+        <NavLink
+          to="/my-toys"
+          className={({ isActive }) =>
+            isActive ? "text-pink-500" : "text-gray-600"
+          }
+        >
+          Add a Toy
+        </NavLink>
+      </li>
+      <li className="mr-6  font-semibold">
         <NavLink
           to="/blog"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-gray-700"
+            isActive ? "text-pink-500" : "text-gray-600"
           }
         >
           Blog
-        </NavLink>
-      </li>
-      <li className="mr-6">
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-gray-700"
-          }
-        >
-          About
         </NavLink>
       </li>
     </>
   );
 
   return (
-    <div className="mx-8 md:mx-16 lg:mx-24">
+    <div>
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -67,16 +87,16 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="normal-case text-blue-500 border-none text-lg md:text-3xl font-bold"
+            className="normal-case text-pink-500 text-lg border-none md:text-3xl font-bold"
           >
             Curious Kids
           </Link>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu-horizontal px-1">{navItems}</ul>
+          <div className="hidden lg:flex ml-10">
+            <ul className="menu-horizontal px-1">{navItems}</ul>
+          </div>
         </div>
         <div className="navbar-end">
-          <button>Login Now</button>
+          <button className="my-btn-cherry">Login Now</button>
         </div>
       </div>
     </div>
