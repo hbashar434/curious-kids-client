@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Login = () => {
+  const { signInWithGoogle } = useContext(AuthContext);
   const [error, setError] = useState("");
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError("Failed to login, try again");
+      });
+  };
+
   return (
     <div className="hero min-h-screen bg-base-200 pb-24">
       <div className="hero-content flex-col">
@@ -44,7 +59,10 @@ const Login = () => {
             <div className="flex flex-col w-full border-opacity-50">
               <div className="divider">OR</div>
             </div>
-            <button className="btn btn-outline border-pink-500 hover:bg-red-400 hover:border-none">
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-outline border-pink-500 hover:bg-red-400 hover:border-none"
+            >
               {" "}
               <span className="mr-2">
                 <FcGoogle size={"30px"}></FcGoogle>
