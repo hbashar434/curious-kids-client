@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
   const toys = useLoaderData();
+  
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-4xl font-bold mb-8 text-center text-pink-600">
@@ -21,8 +22,8 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {toys.map((toy, index) => (
-              <tr key={index}>
+            {toys.map((toy) => (
+              <tr key={toy._id}>
                 <td className="py-4 px-6 border hover:bg-pink-200 transition-colors duration-300">
                   {toy.sellerName || "N/A"}
                 </td>
@@ -39,7 +40,10 @@ const AllToys = () => {
                   {toy.availableQuantity} pcs
                 </td>
                 <td className="py-4 px-6 text-center border">
-                  <Link className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded">
+                  <Link
+                    to={`/toy-details/${toy._id}`}
+                    className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded"
+                  >
                     View Details
                   </Link>
                 </td>
