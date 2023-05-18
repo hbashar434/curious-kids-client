@@ -1,4 +1,5 @@
 import React from "react";
+import logo from '../../../assets/logo.png'
 
 const Footer = () => {
   return (
@@ -63,10 +64,10 @@ const Footer = () => {
       </footer>
       <div className="footer px-10 py-4 md:px-24 border-t bg-pink-50 border-base-300">
         <div className="items-center grid-flow-col">
-          <img src="/workCycle.png" alt="" className="w-12 h-12" />
+        <img src={logo} alt="logo" className="w-12 pr-1" />
           <p>
             Curious Kids <br />
-            Providing reliable services since 2013
+            Providing reliable services since 2015
           </p>
         </div>
         <div className="md:place-self-center md:justify-self-end">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../../assets/logo.png";
 
 const Navbar = () => {
   const navItems = (
@@ -87,8 +88,9 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="normal-case text-pink-500 text-lg border-none md:text-3xl font-bold"
+            className=" btn bg-transparent hover:bg-transparent normal-case text-pink-600 text-lg border-none md:text-3xl font-bold flex items-center"
           >
+            <img src={logo} alt="logo" className="w-12 pr-1" />
             Curious Kids
           </Link>
           <div className="hidden lg:flex ml-10">
