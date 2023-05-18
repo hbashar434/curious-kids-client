@@ -81,7 +81,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu-compact dropdown-content mt-1 p-2 shadow  bg-orange-100 rounded-box w-32"
+              className="menu-compact dropdown-content mt-1 p-2 shadow my-bg-pink rounded-box w-32"
             >
               {navItems}
             </ul>
@@ -93,9 +93,9 @@ const Navbar = () => {
             <img src={logo} alt="logo" className="w-12 pr-1" />
             Curious Kids
           </Link>
-          <div className="hidden lg:flex ml-10">
-            <ul className="menu-horizontal px-1">{navItems}</ul>
-          </div>
+        </div>
+        <div className=" navbar-start hidden lg:flex ml-10">
+          <ul className="menu-horizontal px-1">{navItems}</ul>
         </div>
         <div className="navbar-end">
           <button className="my-btn-cherry">Login Now</button>
