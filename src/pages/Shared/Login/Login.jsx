@@ -1,11 +1,14 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Login = () => {
   const { signInWithGoogle, signIn } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +22,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -30,7 +34,7 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;
