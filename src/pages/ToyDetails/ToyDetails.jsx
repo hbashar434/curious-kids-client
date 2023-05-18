@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import StarRatings from "react-star-ratings";
+import { IoIosPricetags } from "react-icons/io";
 const ToyDetails = () => {
   const toyDetails = useLoaderData();
   const {
@@ -23,9 +24,18 @@ const ToyDetails = () => {
         <figure className="px-6 pt-6">
           <img src={pictureURL} alt="Toy" className="rounded-xl" />
         </figure>
-        <div className="flex justify-between px-10 pt-4">
-          
-          <p className="font-semibold text-lg">{price} $</p>
+        <div className="flex justify-between px-8 pt-4">
+          <StarRatings
+            rating={rating}
+            starRatedColor="#FC4F00"
+            numberOfStars={5}
+            starDimension="25px"
+            starSpacing="3px"
+            name="rating"
+          />
+          <p className="font-semibold text-lg flex items-center gap-2">
+            <IoIosPricetags size={25} color="#E74646" /> {price} $
+          </p>
         </div>
         <div className="card-body pt-2">
           <h2 className="card-title">{sellerName}</h2>
