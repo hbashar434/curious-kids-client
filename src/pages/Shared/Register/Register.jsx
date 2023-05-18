@@ -1,9 +1,46 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
+  const { createUser, createProfile, setReload } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    setPasswordError(" ");
+    setError(" ");
+
+    if (password.length < 6) {
+      setPasswordError("Password must be at least 6 characters long");
+      e.target.password.focus();
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        createProfile(name, photo)
+          .then(() => {
+            setReload(new Date().getTime());
+            form.reset();
+          })
+          .catch((error) => {
+            const errorMessage = error.message;
+          });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError("Create account failed, try again");
+      });
+  };
 
   return (
     <div className="hero min-h-screen bg-base-200 pb-24">
@@ -63,9 +100,7 @@ const Register = () => {
             </div>
             <p className="text-error">{error}</p>
             <div className="form-control mt-6">
-              <button className="my-btn-cherry">
-                Register
-              </button>
+              <button className="my-btn-cherry">Register</button>
             </div>
             <label>
               Already have an account?
