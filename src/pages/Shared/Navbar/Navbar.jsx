@@ -4,7 +4,14 @@ import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {});
+  };
+
   const navItems = (
     <>
       <li className="mr-6  font-semibold">
@@ -105,7 +112,9 @@ const Navbar = () => {
               <div className="w-10 rounded-full ring ring-purple-500 ring-offset-base-100 ring-offset-1 mr-4">
                 <img src={user.photoURL} />
               </div>
-              <button className="my-btn-cherry">Log Out</button>
+              <button onClick={handleLogOut} className="my-btn-cherry">
+                Log Out
+              </button>
             </div>
           ) : (
             <Link to="/login" className="my-btn-cherry">
