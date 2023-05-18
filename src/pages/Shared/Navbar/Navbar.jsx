@@ -5,6 +5,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log("user", user?.email);
 
   const handleLogOut = () => {
     logOut()
@@ -34,26 +35,34 @@ const Navbar = () => {
           All Toys
         </NavLink>
       </li>
-      <li className="mr-6  font-semibold">
-        <NavLink
-          to="/my-toys"
-          className={({ isActive }) =>
-            isActive ? "text-pink-500" : "text-gray-600"
-          }
-        >
-          My Toys
-        </NavLink>
-      </li>
-      <li className="mr-6  font-semibold">
-        <NavLink
-          to="/add-toys"
-          className={({ isActive }) =>
-            isActive ? "text-pink-500" : "text-gray-600"
-          }
-        >
-          Add a Toy
-        </NavLink>
-      </li>
+      {user ? (
+        <li className="mr-6  font-semibold">
+          <NavLink
+            to='/my-toys'
+            className={({ isActive }) =>
+              isActive ? "text-pink-500" : "text-gray-600"
+            }
+          >
+            My Toys
+          </NavLink>
+        </li>
+      ) : (
+        ""
+      )}
+      {user ? (
+        <li className="mr-6  font-semibold">
+          <NavLink
+            to="/add-toys"
+            className={({ isActive }) =>
+              isActive ? "text-pink-500" : "text-gray-600"
+            }
+          >
+            Add a Toy
+          </NavLink>
+        </li>
+      ) : (
+        ""
+      )}
       <li className="mr-6  font-semibold">
         <NavLink
           to="/blog"
@@ -110,7 +119,7 @@ const Navbar = () => {
           {user ? (
             <div className="avatar">
               <div className="w-10 rounded-full ring ring-purple-500 ring-offset-base-100 ring-offset-1 mr-4">
-                <img src={user.photoURL} />
+                <img src={user.photoURL} title={user.displayName} />
               </div>
               <button onClick={handleLogOut} className="my-btn-cherry">
                 Log Out

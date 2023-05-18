@@ -9,7 +9,6 @@ import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import Login from "../pages/Shared/Login/Login";
 import Register from "../pages/Shared/Register/Register";
 import PrivateRoute from "./PrivateRoute";
-import Loading from "../pages/Shared/Loading/Loading";
 
 const router = createBrowserRouter([
   {
