@@ -4,11 +4,14 @@ import Home from "../pages/Home/Home";
 import Blog from "../pages/Blog/Blog";
 import AllToys from "../pages/AllToys/AllToys";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
+import MyToys from "../pages/MyToys/MyToys";
+import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -26,6 +29,10 @@ const router = createBrowserRouter([
           fetch(
             `https://curious-kids-server.vercel.app/toy-details/${params.id}`
           ),
+      },
+      {
+        path: "/my-toys",
+        element: <MyToys></MyToys>,
       },
       {
         path: "/blog",
