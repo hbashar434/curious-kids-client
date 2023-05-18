@@ -4,8 +4,27 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Login = () => {
-  const { signInWithGoogle } = useContext(AuthContext);
+  const { signInWithGoogle, signIn } = useContext(AuthContext);
   const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    setError("");
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        form.reset();
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError("User-not-found: email or password doesn't match");
+      });
+  };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
@@ -26,7 +45,7 @@ const Login = () => {
         <div className="text-center lg:text-left"></div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
