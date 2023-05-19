@@ -5,7 +5,6 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log("user", user?.email);
 
   const handleLogOut = () => {
     logOut()
@@ -38,7 +37,7 @@ const Navbar = () => {
       {user ? (
         <li className="mr-6  font-semibold">
           <NavLink
-            to='/my-toys'
+            to="/my-toys"
             className={({ isActive }) =>
               isActive ? "text-pink-500" : "text-gray-600"
             }

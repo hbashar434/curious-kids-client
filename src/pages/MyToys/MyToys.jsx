@@ -21,7 +21,8 @@ const MyToys = () => {
         <table className="w-full border-collapse bg-purple-50 rounded-lg shadow-md">
           <thead>
             <tr>
-              <th className="py-4 px-6 bg-blue-500 text-white">Seller</th>
+              <th className="py-4 px-6 bg-blue-500 text-white">No.</th>
+              <th className="py-4 px-6 bg-red-500 text-white">Seller</th>
               <th className="py-4 px-6 bg-green-500 text-white">Toy Name</th>
               <th className="py-4 px-6 bg-yellow-500 text-white">Category</th>
               <th className="py-4 px-6 bg-pink-500 text-white">Price</th>
@@ -30,8 +31,11 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {toys.map((toy, index) => (
-              <tr key={index}>
+            {toys.map((toy, idx) => (
+              <tr key={toy._id}>
+                <td className="py-4 px-6 border hover:bg-pink-200 transition-colors duration-300">
+                  {idx + 1}
+                </td>
                 <td className="py-4 px-6 border hover:bg-pink-200 transition-colors duration-300">
                   {toy.sellerName || "N/A"}
                 </td>

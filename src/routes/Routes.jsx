@@ -58,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <UpdateToy></UpdateToy>,
+        loader: ({ params }) =>
+          fetch(
+            `https://curious-kids-server.vercel.app/toy-details/${params.id}`
+          ),
       },
       {
         path: "/login",

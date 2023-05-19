@@ -1,11 +1,28 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateToy = () => {
+  const toy = useLoaderData();
+
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    fetch(`https://curious-kids-server.vercel.app/my-toys/${toy._id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire("Successfully Update!");
+        }
+      });
   };
 
   return (
@@ -25,6 +42,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="pictureUrl"
+              defaultValue={toy?.pictureURL}
               {...register("pictureURL", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -36,6 +54,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="name"
+              defaultValue={toy?.name}
               {...register("name", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -50,6 +69,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="sellerName"
+              defaultValue={toy?.sellerName}
               {...register("sellerName")}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -64,6 +84,7 @@ const UpdateToy = () => {
             <input
               type="email"
               id="sellerEmail"
+              value={toy?.sellerEmail}
               {...register("sellerEmail", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -77,6 +98,7 @@ const UpdateToy = () => {
             </label>
             <select
               id="subCategory"
+              defaultValue={toy?.subcategory}
               {...register("subcategory", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             >
@@ -93,6 +115,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="price"
+              defaultValue={toy?.price}
               {...register("price", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -107,6 +130,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="quantity"
+              defaultValue={toy?.availableQuantity}
               {...register("availableQuantity", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -118,6 +142,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="rating"
+              defaultValue={toy?.rating}
               {...register("rating", { required: true, min: 1, max: 5 })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -131,6 +156,7 @@ const UpdateToy = () => {
             </label>
             <textarea
               id="description"
+              defaultValue={toy?.description}
               {...register("description", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />

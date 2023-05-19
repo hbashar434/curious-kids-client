@@ -82,7 +82,6 @@ const AddToys = () => {
               id="sellerEmail"
               {...register("sellerEmail", { required: true })}
               value={user?.email}
-              readOnly
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
           </div>
