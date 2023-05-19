@@ -12,6 +12,24 @@ const MyToys = () => {
       .then((data) => setToys(data));
   }, []);
 
+  const handleDelete = (id) => {
+    const proceed = confirm("Are You sure you want to delete");
+    if (proceed) {
+      fetch(`https://curious-kids-server.vercel.app/my-toys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("deleted successful");
+            const remainingToys = toys.filter((toy) => toy._id !== id);
+            setToys(remainingToys);
+          }
+        });
+    }
+  };
+
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-4xl font-bold mb-8 text-center text-purple-600">
@@ -55,9 +73,12 @@ const MyToys = () => {
                   <Link to={`/update/${toy._id}`}>
                     <button className="my-btn-indigoPurple"> Update</button>
                   </Link>
-                  <Link>
-                    <button className="my-btn-cherry">Delete</button>
-                  </Link>
+                  <button
+                    onClick={() => handleDelete(toy._id)}
+                    className="my-btn-cherry"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
