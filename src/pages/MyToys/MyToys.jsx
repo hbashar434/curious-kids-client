@@ -13,6 +13,14 @@ const MyToys = () => {
       .then((data) => setToys(data));
   }, []);
 
+  const handleFilter = (value) => {
+    fetch(
+      `https://curious-kids-server.vercel.app/sorted-toys?email=${user?.email}&sort=${value}`
+    )
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  };
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -45,6 +53,19 @@ const MyToys = () => {
       <h1 className="text-4xl font-bold mb-8 text-center text-purple-600">
         My Toys
       </h1>
+      <div className="flex justify-end pb-4 pr-4">
+        <select
+          className="select select-primary w-36"
+          defaultValue="filter"
+          onChange={(e) => handleFilter(e.target.value)}
+        >
+          <option value="filter" disabled>
+            Filter By
+          </option>
+          <option value="-1">High Price</option>
+          <option value="1">Low Price</option>
+        </select>
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse bg-purple-50 rounded-lg shadow-md">
           <thead>

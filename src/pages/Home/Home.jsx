@@ -3,14 +3,17 @@ import Banner from "../Banner/Banner";
 
 import { useLoaderData } from "react-router-dom";
 import Gallery from "../Gallery/Gallery";
+import TabsCard from "../TabsCard/TabsCard";
 
 const Home = () => {
   const data = useLoaderData();
+  console.log(data);
 
   return (
     <div>
       <Banner></Banner>
       <Gallery></Gallery>
+      <TabsCard></TabsCard>
     </div>
   );
 };

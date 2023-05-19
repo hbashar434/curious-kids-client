@@ -25,14 +25,17 @@ const ToyDetails = () => {
           <img src={pictureURL} alt="Toy" className="rounded-xl" />
         </figure>
         <div className="flex justify-between px-8 pt-4">
-          <StarRatings
-            rating={rating}
-            starRatedColor="#FC4F00"
-            numberOfStars={5}
-            starDimension="25px"
-            starSpacing="3px"
-            name="rating"
-          />
+          <div className="flex items-center gap-2">
+            <StarRatings
+              rating={parseFloat(rating)}
+              starRatedColor="#FC4F00"
+              numberOfStars={5}
+              starDimension="25px"
+              starSpacing="3px"
+              name="rating"
+            />{" "}
+            <span className="text-lg mt-1">{rating}</span>
+          </div>
           <p className="font-semibold text-lg flex items-center gap-2">
             <IoIosPricetags size={25} color="#E74646" /> {price} $
           </p>
