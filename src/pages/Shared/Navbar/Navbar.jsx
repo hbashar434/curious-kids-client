@@ -106,7 +106,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className=" btn bg-transparent hover:bg-transparent normal-case text-pink-600 text-lg border-none md:text-3xl font-bold flex items-center"
+            className=" btn bg-transparent hover:bg-transparent normal-case border-none my-text-gr text-lg  md:text-3xl font-bold flex items-center"
           >
             <img src={logo} alt="logo" className="w-12 pr-1" />
             Curious Kids

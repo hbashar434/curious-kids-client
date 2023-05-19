@@ -9,6 +9,7 @@ import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import Login from "../pages/Shared/Login/Login";
 import Register from "../pages/Shared/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import AddToys from "../pages/AddToys/AddToys";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyToys></MyToys>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/add-toys",
+        element: (
+          <PrivateRoute>
+            <AddToys></AddToys>
           </PrivateRoute>
         ),
       },

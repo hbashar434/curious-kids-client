@@ -10,7 +10,7 @@ const Banner = () => {
           <h1>
             Enter the World of TechToys: Where Imagination Meets Technology
           </h1>
-          <h1 className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          <h1 className="my-text-gr">
             Explore, Play, and Learn with our Amazing Collection!
           </h1>
         </div>
