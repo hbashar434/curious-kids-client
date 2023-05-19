@@ -76,7 +76,7 @@ const Navbar = () => {
   );
 
   return (
-    <div>
+    <div className="p-0 md:px-4">
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -105,9 +105,9 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className=" btn bg-transparent hover:bg-transparent normal-case border-none my-text-gr text-lg  md:text-3xl font-bold flex items-center"
+            className="my-text-gr text-base  md:text-3xl font-bold flex items-center"
           >
-            <img src={logo} alt="logo" className="w-12 pr-1" />
+            <img src={logo} alt="logo" className="w-8 lg:w-12 pr-1" />
             Curious Kids
           </Link>
         </div>
