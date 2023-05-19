@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
-  const toys = useLoaderData();
+  const toyCollection = useLoaderData();
+  const [toys, setToys] = useState(toyCollection);
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearch = () => {
+    fetch(`https://curious-kids-server.vercel.app/search-toys/${searchValue}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setToys(data);
+      });
+  };
 
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-4xl font-bold mb-8 text-center text-pink-600">
         All Toys
       </h1>
+      <div className="flex justify-center gap-4 mb-8">
+        <input
+          onChange={(e) => setSearchValue(e.target.value)}
+          type="text"
+          placeholder="search here"
+          className="input input-bordered input-error h-10 w-48"
+        />
+        <button onClick={handleSearch} className="my-btn-cherry">
+          Search
+        </button>
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse bg-white rounded-lg shadow-md">
           <thead>

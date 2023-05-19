@@ -20,7 +20,11 @@ const UpdateToy = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          Swal.fire("Successfully Update!");
+          Swal.fire(
+            'Updated!',
+            'Your Toy info has been updated.',
+            'success'
+          )
         }
       });
   };
