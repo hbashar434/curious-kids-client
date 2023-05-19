@@ -48,7 +48,7 @@ const MyToys = () => {
                   {toy.availableQuantity} pcs
                 </td>
                 <td className="py-4 px-4 border flex justify-around gap-2 md:gap-0">
-                  <Link>
+                  <Link to={`/update/${toy._id}`}>
                     <button className="my-btn-indigoPurple"> Update</button>
                   </Link>
                   <Link>

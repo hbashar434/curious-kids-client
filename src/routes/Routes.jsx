@@ -10,6 +10,7 @@ import Login from "../pages/Shared/Login/Login";
 import Register from "../pages/Shared/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import AddToys from "../pages/AddToys/AddToys";
+import UpdateToy from "../pages/UpdateToy/UpdateToy";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
             <AddToys></AddToys>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateToy></UpdateToy>,
       },
       {
         path: "/login",
