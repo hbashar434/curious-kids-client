@@ -6,9 +6,6 @@ import Gallery from "../Gallery/Gallery";
 import TabsCard from "../TabsCard/TabsCard";
 
 const Home = () => {
-  const data = useLoaderData();
-  console.log(data);
-
   return (
     <div>
       <Banner></Banner>

@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import StarRatings from "react-star-ratings";
 import { IoIosPricetags } from "react-icons/io";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const TabsCard = () => {
+  const { user } = useContext(AuthContext);
   const [category, setCategory] = useState([]);
   const [currentTab, setCurrentTab] = useState("Robotic-Astronauts");
 
@@ -20,6 +23,19 @@ const TabsCard = () => {
   const handleTab = (tabName) => {
     setCurrentTab(tabName);
   };
+
+  const handleViewDetails = () => {
+    if (!user) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please Login First!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
+
   const colors = [
     "bg-pink-200",
     "bg-yellow-200",
@@ -34,7 +50,7 @@ const TabsCard = () => {
   };
 
   const cardColor = getRandomColor();
-  
+
   return (
     <Tabs className="my-10 md:my-24">
       {/* <TabList>
@@ -49,25 +65,31 @@ const TabsCard = () => {
         </Tab>
       </TabList> */}
       <TabList className="flex space-x-2">
-      <Tab
-        className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
-        onClick={() => handleTab("Robotic-Astronauts")}
-      >
-        <span className="text-xs md:text-lg md:font-semibold">Robotic Astronauts</span>
-      </Tab>
-      <Tab
-        className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
-        onClick={() => handleTab("Robotic-Pets")}
-      >
-        <span className="text-xs md:text-lg md:font-semibold">Robotic Pets</span>
-      </Tab>
-      <Tab
-        className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
-        onClick={() => handleTab("Robotic-Vehicles")}
-      >
-        <span className="text-xs md:text-lg md:font-semibold">Robotic Vehicles</span>
-      </Tab>
-    </TabList>
+        <Tab
+          className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
+          onClick={() => handleTab("Robotic-Astronauts")}
+        >
+          <span className="text-xs md:text-lg md:font-semibold">
+            Robotic Astronauts
+          </span>
+        </Tab>
+        <Tab
+          className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
+          onClick={() => handleTab("Robotic-Pets")}
+        >
+          <span className="text-xs md:text-lg md:font-semibold">
+            Robotic Pets
+          </span>
+        </Tab>
+        <Tab
+          className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
+          onClick={() => handleTab("Robotic-Vehicles")}
+        >
+          <span className="text-xs md:text-lg md:font-semibold">
+            Robotic Vehicles
+          </span>
+        </Tab>
+      </TabList>
 
       <TabPanel>
         <div className="grid md:grid-cols-3 gap-6 p-6 md:p-8">
@@ -106,7 +128,11 @@ const TabsCard = () => {
                 </div>
               </div>
               <div className="px-4">
-                <Link to={`/toy-details/${tab._id}`} className="my-btn-cherry">
+                <Link
+                  to={`/toy-details/${tab._id}`}
+                  className="my-btn-cherry"
+                  onClick={handleViewDetails}
+                >
                   View Details
                 </Link>
               </div>
@@ -151,7 +177,11 @@ const TabsCard = () => {
                 </div>
               </div>
               <div className="px-4">
-                <Link to={`/toy-details/${tab._id}`} className="my-btn-cherry">
+                <Link
+                  to={`/toy-details/${tab._id}`}
+                  className="my-btn-cherry"
+                  onClick={handleViewDetails}
+                >
                   View Details
                 </Link>
               </div>
@@ -196,7 +226,11 @@ const TabsCard = () => {
                 </div>
               </div>
               <div className="px-4">
-                <Link to={`/toy-details/${tab._id}`} className="my-btn-cherry">
+                <Link
+                  to={`/toy-details/${tab._id}`}
+                  className="my-btn-cherry"
+                  onClick={handleViewDetails}
+                >
                   View Details
                 </Link>
               </div>

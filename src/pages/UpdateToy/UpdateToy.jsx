@@ -9,7 +9,7 @@ const UpdateToy = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`https://curious-kids-server.vercel.app/my-toys/${toy._id}`, {
+    fetch(`https://curious-kids-server.vercel.app/my-toy/${toy._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -20,11 +20,7 @@ const UpdateToy = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          Swal.fire(
-            'Updated!',
-            'Your Toy info has been updated.',
-            'success'
-          )
+          Swal.fire("Updated!", "Your Toy info has been updated.", "success");
         }
       });
   };

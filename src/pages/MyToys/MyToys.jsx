@@ -32,7 +32,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://curious-kids-server.vercel.app/my-toys/${id}`, {
+        fetch(`https://curious-kids-server.vercel.app/my-toy-list/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

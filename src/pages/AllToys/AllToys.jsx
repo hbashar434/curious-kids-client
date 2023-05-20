@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AllToys = () => {
+  const { user } = useContext(AuthContext);
   const toyCollection = useLoaderData();
   const [toys, setToys] = useState(toyCollection);
   const [searchValue, setSearchValue] = useState("");
+
+  const handleViewDetails = () => {
+    if (!user) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please Login First!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
 
   const handleSearch = () => {
     fetch(`https://curious-kids-server.vercel.app/search-toys/${searchValue}`)
@@ -69,6 +84,7 @@ const AllToys = () => {
                   <Link
                     to={`/toy-details/${toy._id}`}
                     className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded"
+                    onClick={handleViewDetails}
                   >
                     View Details
                   </Link>
