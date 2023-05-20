@@ -19,7 +19,13 @@ const AddToys = () => {
       .then((data) => {
         reset();
         if (data.insertedId) {
-          Swal.fire("Successfully added!");
+          Swal.fire({
+            icon: "success",
+            title: "Done!",
+            text: "Your Toy has been added",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
   };

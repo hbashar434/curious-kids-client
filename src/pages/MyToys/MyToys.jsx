@@ -42,7 +42,13 @@ const MyToys = () => {
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
+              Swal.fire({
+                icon: 'success',
+                title: "Deleted!",
+                text: "Your Toy has been deleted",
+                showConfirmButton: false,
+                timer: 1500,
+              });
               const remainingToys = toys.filter((toy) => toy._id !== id);
               setToys(remainingToys);
             }

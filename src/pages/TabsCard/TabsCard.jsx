@@ -117,7 +117,7 @@ const TabsCard = () => {
                       <IoIosPricetags size={25} color="#E74646" /> {tab?.price}{" "}
                       $
                     </p>
-                    <div>
+                    <div className="flex items-center gap-2">
                       <StarRatings
                         rating={parseFloat(tab?.rating)}
                         starRatedColor="#FC4F00"
@@ -126,7 +126,7 @@ const TabsCard = () => {
                         starSpacing="1px"
                         name="rating"
                       />{" "}
-                      {tab?.rating}
+                      <p className="mt-1">{tab?.rating}</p>
                     </div>
                   </div>
                 </div>
