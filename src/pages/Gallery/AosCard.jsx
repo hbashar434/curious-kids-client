@@ -14,7 +14,7 @@ const AosCard = ({ animation, picture }) => {
       className="p-4"
       data-aos={animation}
       data-aos-offset="200"
-      data-aos-duration="1000"
+      data-aos-duration="3000"
     >
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
         <img

@@ -9,7 +9,7 @@ const Main = () => {
       <div className="my-bg-pink">
         <Navbar></Navbar>
       </div>
-      <div className="min-h-[calc(100vh-88px)] px-4 md:px-0">
+      <div className="min-h-[calc(100vh-88px)] px-4 md:px-4">
         <Outlet></Outlet>
       </div>
       <div className="my-bg-pink lg:px-8">

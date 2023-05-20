@@ -10,8 +10,11 @@ const MyToys = () => {
   useEffect(() => {
     fetch(`https://curious-kids-server.vercel.app/my-toys/${user?.email}`)
       .then((res) => res.json())
-      .then((data) => setToys(data));
-  }, []);
+      .then((data) => {
+        setToys(data);
+        console.log(data);
+      });
+  }, [user]);
 
   const handleFilter = (value) => {
     fetch(
@@ -49,7 +52,7 @@ const MyToys = () => {
   };
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto md:mb-24 py-8">
       <h1 className="text-4xl font-bold mb-8 text-center text-purple-600">
         My Toys
       </h1>

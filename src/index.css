@@ -13,7 +13,9 @@
 .my-bg-pink {
   @apply bg-pink-100;
 }
-
+.my-bg-gr {
+  @apply bg-gradient-to-r from-red-400 to-pink-500 hover:from-pink-500 hover:to-red-400 text-white font-bold;
+}
 .my-text-gr {
   @apply bg-gradient-to-r from-indigo-500 to-pink-500 text-transparent bg-clip-text;
 }

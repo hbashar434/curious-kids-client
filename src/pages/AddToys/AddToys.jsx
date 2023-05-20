@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
     fetch("https://curious-kids-server.vercel.app/all-toys", {
@@ -17,7 +17,7 @@ const AddToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        reset();
         if (data.insertedId) {
           Swal.fire("Successfully added!");
         }

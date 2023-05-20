@@ -8,14 +8,16 @@ const Gallery = () => {
           Perfect for imaginative play
         </h2>
         <p className="md:text-lg text-gray-700 mt-4">
-        Discover a world of creativity and excitement with our diverse range of Kid Robot Toys. From interactive companions to buildable kits, there&apos;s something for every young robot enthusiast.
+          Discover a world of creativity and excitement with our diverse range
+          of Kid Robot Toys. From interactive companions to buildable kits,
+          there&apos;s something for every young robot enthusiast.
         </p>
       </div>
       <div className="grid md:grid-cols-2">
-        <AosCard animation="fade-up-right" picture="https://rb.gy/sjoyl" />
-        <AosCard animation="fade-up-left" picture="https://rb.gy/7w315" />
-        <AosCard animation="fade-down-right" picture="https://rb.gy/svday" />
-        <AosCard animation="fade-down-left" picture="https://rb.gy/u07e3" />
+        <AosCard animation="zoom-in-down" picture="https://rb.gy/sjoyl" />
+        <AosCard animation="zoom-in-up" picture="https://rb.gy/7w315" />
+        <AosCard animation="zoom-in-down" picture="https://rb.gy/svday" />
+        <AosCard animation="zoom-in-up" picture="https://rb.gy/u07e3" />
       </div>
     </div>
   );
