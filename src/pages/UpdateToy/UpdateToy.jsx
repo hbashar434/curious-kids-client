@@ -42,7 +42,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="pictureUrl"
-              defaultValue={toy?.pictureURL}
+              value={toy?.pictureURL}
               {...register("pictureURL", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -54,7 +54,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="name"
-              defaultValue={toy?.name}
+              value={toy?.name}
               {...register("name", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -69,7 +69,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="sellerName"
-              defaultValue={toy?.sellerName}
+              value={toy?.sellerName}
               {...register("sellerName")}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -98,7 +98,7 @@ const UpdateToy = () => {
             </label>
             <select
               id="subCategory"
-              defaultValue={toy?.subcategory}
+              value={toy?.subcategory}
               {...register("subcategory", { required: true })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             >
@@ -142,7 +142,7 @@ const UpdateToy = () => {
             <input
               type="text"
               id="rating"
-              defaultValue={toy?.rating}
+              value={toy?.rating}
               {...register("rating", { required: true, min: 1, max: 5 })}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />

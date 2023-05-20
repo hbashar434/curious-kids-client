@@ -111,10 +111,11 @@ const Navbar = () => {
             Curious Kids
           </Link>
         </div>
-        <div className=" navbar-start hidden lg:flex ml-10">
-          <ul className="menu-horizontal px-1">{navItems}</ul>
-        </div>
+
         <div className="navbar-end">
+          <div className="hidden lg:flex ml-10">
+            <ul className="menu-horizontal px-1">{navItems}</ul>
+          </div>
           {user ? (
             <div className="avatar">
               <div className="w-10 rounded-full ring ring-purple-500 ring-offset-base-100 ring-offset-1 mr-4">

@@ -21,7 +21,8 @@ const AllToys = () => {
     }
   };
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault();
     fetch(`https://curious-kids-server.vercel.app/search-toys/${searchValue}`)
       .then((res) => res.json())
       .then((data) => {
@@ -35,17 +36,18 @@ const AllToys = () => {
       <h1 className="text-4xl font-bold mb-8 text-center text-pink-600">
         All Toys
       </h1>
-      <div className="flex justify-center gap-4 mb-8">
+      <form onSubmit={handleSearch} className="flex justify-center gap-4 mb-8">
         <input
           onChange={(e) => setSearchValue(e.target.value)}
           type="text"
+          required
           placeholder="search here"
           className="input input-bordered input-error h-10 w-48"
         />
-        <button onClick={handleSearch} className="my-btn-cherry">
+        <button type="submit" className="my-btn-cherry">
           Search
         </button>
-      </div>
+      </form>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse bg-white rounded-lg shadow-md">
           <thead>
