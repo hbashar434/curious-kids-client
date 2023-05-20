@@ -4,6 +4,7 @@ import TabsCard from "../TabsCard/TabsCard";
 import Gallery from "../Gallery/Gallery";
 import Pagination from "../Pagination/Pagination";
 import Testimonials from "../Testimonials/Testimonials";
+import Newsletter from "../NewsLetter/NewsLetter";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Gallery></Gallery>
       <TabsCard></TabsCard>
       <Testimonials></Testimonials>
+      <Newsletter></Newsletter>
     </div>
   );
 };

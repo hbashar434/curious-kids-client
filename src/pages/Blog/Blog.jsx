@@ -2,9 +2,9 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className=" bg-purple-300 p-8 rounded shadow">
+    <div className=" bg-purple-100 p-8 rounded shadow">
       <h2 className="text-2xl font-bold mb-4">
-        Tech Insights: Access Tokens, Databases, and Web Frameworks
+        Tech Insights: Access Tokens, Databases, and Node Frameworks
       </h2>
 
       <div className="mb-6">

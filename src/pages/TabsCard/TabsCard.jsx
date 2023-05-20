@@ -52,7 +52,7 @@ const TabsCard = () => {
   const cardColor = getRandomColor();
 
   return (
-    <div className="my-10 md:my-24">
+    <div className="my-10 md:my-24 px-4 md:px-8">
       <div className="mb-4 md:mb-10 md:w-6/12 md:mx-auto md:text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">
           Explore the Robotic World
@@ -66,7 +66,7 @@ const TabsCard = () => {
         </p>
       </div>
       <Tabs>
-        <TabList className="flex space-x-2">
+        <TabList className="flex space-x-2 justify-center md:justify-start">
           <Tab
             className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
             onClick={() => handleTab("Robotic-Astronauts")}

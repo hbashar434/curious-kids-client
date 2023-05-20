@@ -23,7 +23,7 @@ const Pagination = () => {
   };
 
   return (
-    <div className="flex flex-col items-center md:my-24 my-10">
+    <div className="flex flex-col items-center px-4 md:px-8 md:my-24 my-10">
       <div className="mb-4 md:mb-10 md:w-6/12 md:mx-auto md:text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">
           Get Your Perfect Robot Toy
@@ -35,7 +35,7 @@ const Pagination = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {currentItems.map((toy) => (
-          <div key={toy._id} className="p-4 bg-white shadow">
+          <div key={toy._id} className="p-4 bg-purple-50 shadow">
             <div className="card w-full bg-purple-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img
@@ -60,7 +60,7 @@ const Pagination = () => {
           <button
             key={index}
             className={`px-8 py-1 mx-3 mt-2 rounded ${
-              currentPage === index + 1 ? "my-bg-gr" : "bg-gray-200"
+              currentPage === index + 1 ? "my-bg-gr" : "bg-purple-200"
             }`}
             onClick={() => handleClick(index + 1)}
           >

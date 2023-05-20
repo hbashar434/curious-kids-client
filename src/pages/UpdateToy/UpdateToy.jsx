@@ -26,7 +26,7 @@ const UpdateToy = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 bg-purple-200">
+    <div className="container mx-auto p-4 bg-purple-100">
       <h1 className="text-3xl font-bold mb-4 text-center my-text-gr">
         Update Toy Info
       </h1>

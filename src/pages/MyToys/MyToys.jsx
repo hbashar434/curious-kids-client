@@ -52,7 +52,7 @@ const MyToys = () => {
   };
 
   return (
-    <div className="container mx-auto md:mb-24 py-8">
+    <div className="container mx-auto md:pb-24 py-8 px-4 md:px-8">
       <h1 className="text-4xl font-bold mb-8 text-center text-purple-600">
         My Toys
       </h1>
@@ -70,7 +70,7 @@ const MyToys = () => {
         </select>
       </div>
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse bg-purple-50 rounded-lg shadow-md">
+        <table className="w-full border-collapse bg-purple-100 rounded-lg shadow-md">
           <thead>
             <tr>
               <th className="py-4 px-6 bg-blue-500 text-white">No.</th>

@@ -16,7 +16,7 @@ const ToyDetails = () => {
   } = toyDetails;
 
   return (
-    <div className="flex justify-center my-10">
+    <div className="flex justify-center py-10 px-4">
       <div className="card md:w-6/12 bg-base-100 shadow-xl">
         <div className="bg-purple-500 text-white px-4 py-2 rounded-t-lg flex items-center">
           <h2 className="text-2xl font-bold">{name}</h2>
