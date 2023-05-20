@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import TabsCard from "../TabsCard/TabsCard";
 import Gallery from "../Gallery/Gallery";
 import Pagination from "../Pagination/Pagination";
+import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Pagination></Pagination>
       <Gallery></Gallery>
       <TabsCard></TabsCard>
+      <Testimonials></Testimonials>
     </div>
   );
 };

@@ -13,9 +13,11 @@ const Gallery = () => {
           there&apos;s something for every young robot enthusiast.
         </p>
       </div>
-      <div className="grid md:grid-cols-2">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3">
         <AosCard animation="zoom-in-down" picture="https://rb.gy/sjoyl" />
         <AosCard animation="zoom-in-up" picture="https://rb.gy/7w315" />
+        <AosCard animation="zoom-in-down" picture="https://rb.gy/svday" />
+        <AosCard animation="zoom-in-up" picture="https://rb.gy/u07e3" />
         <AosCard animation="zoom-in-down" picture="https://rb.gy/svday" />
         <AosCard animation="zoom-in-up" picture="https://rb.gy/u07e3" />
       </div>
