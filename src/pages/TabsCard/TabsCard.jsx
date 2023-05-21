@@ -97,7 +97,7 @@ const TabsCard = () => {
             {category.map((tab) => (
               <div
                 key={tab._id}
-                className={`max-w-sm pb-8 rounded overflow-hidden shadow-lg ${cardColor} hover:scale-105 transition duration-500 ease-in-out transform hover:rotate-3 hover:shadow-2xl`}
+                className={`max-w-lg pb-8 rounded overflow-hidden shadow-lg ${cardColor} hover:scale-105 transition duration-500 ease-in-out transform hover:rotate-3 hover:shadow-2xl`}
               >
                 <img
                   className="w-full h-48 md:h-60"
@@ -151,7 +151,7 @@ const TabsCard = () => {
             {category.map((tab) => (
               <div
                 key={tab._id}
-                className={`max-w-sm pb-8 rounded overflow-hidden shadow-lg ${cardColor} hover:scale-105 transition duration-500 ease-in-out transform hover:rotate-3 hover:shadow-2xl`}
+                className={`max-w-lg pb-8 rounded overflow-hidden shadow-lg ${cardColor} hover:scale-105 transition duration-500 ease-in-out transform hover:rotate-3 hover:shadow-2xl`}
               >
                 <img
                   className="w-full h-48 md:h-60"
@@ -205,7 +205,7 @@ const TabsCard = () => {
             {category.map((tab) => (
               <div
                 key={tab._id}
-                className={`max-w-sm pb-8 rounded overflow-hidden shadow-lg ${cardColor} hover:scale-105 transition duration-500 ease-in-out transform hover:rotate-3 hover:shadow-2xl`}
+                className={`max-w-lg pb-8 rounded overflow-hidden shadow-lg ${cardColor} hover:scale-105 transition duration-500 ease-in-out transform hover:rotate-3 hover:shadow-2xl`}
               >
                 <img
                   className="w-full h-48 md:h-60"
