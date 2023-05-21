@@ -4,7 +4,7 @@ import robotKids from "../../assets/robotKids.png";
 
 const Banner = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-8 px-4 md:px-8 items-center lg:pt-16">
+    <div className="grid md:grid-cols-2 gap-8 px-4 pt-4 md:px-8 items-center lg:pt-16">
       <div className="order-1 md:order-none">
         <div className=" text-3xl font-bold grid gap-3">
           <h1>

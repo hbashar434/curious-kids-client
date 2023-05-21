@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IoIosPricetags } from "react-icons/io";
 
-
 const Pagination = () => {
   const [toys, setToys] = useState([]);
   useEffect(() => {
@@ -22,6 +21,14 @@ const Pagination = () => {
 
   const handleClick = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  const handlePrevious = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
   };
 
   return (
@@ -59,12 +66,21 @@ const Pagination = () => {
           </div>
         ))}
       </div>
-
       <div className="flex-warp mt-6">
+        <button
+          className={`px-8 py-2 mx-3 mt-2 rounded ${
+            currentPage === 1 ? "bg-purple-200" : "my-bg-gr"
+          }`}
+          disabled={currentPage === 1}
+          onClick={handlePrevious}
+        >
+          Previous
+        </button>
+
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index}
-            className={`px-8 py-1 mx-3 mt-2 rounded ${
+            className={`px-8 py-2 mx-3 mt-2 rounded ${
               currentPage === index + 1 ? "my-bg-gr" : "bg-purple-200"
             }`}
             onClick={() => handleClick(index + 1)}
@@ -72,6 +88,16 @@ const Pagination = () => {
             {index + 1}
           </button>
         ))}
+
+        <button
+          className={`px-8 py-2 mx-3 mt-2 rounded ${
+            currentPage === totalPages ? "bg-purple-200" : "my-bg-gr"
+          }`}
+          disabled={currentPage === totalPages}
+          onClick={handleNext}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
