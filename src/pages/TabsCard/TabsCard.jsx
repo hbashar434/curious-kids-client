@@ -68,7 +68,7 @@ const TabsCard = () => {
       <Tabs>
         <TabList className="flex space-x-2 justify-center md:justify-start">
           <Tab
-            className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
+            className={`p-2 cursor-pointer rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
             onClick={() => handleTab("Robotic-Astronauts")}
           >
             <span className="text-xs md:text-lg md:font-semibold">
@@ -76,7 +76,7 @@ const TabsCard = () => {
             </span>
           </Tab>
           <Tab
-            className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
+            className={`p-2 cursor-pointer rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
             onClick={() => handleTab("Robotic-Pets")}
           >
             <span className="text-xs md:text-lg md:font-semibold">
@@ -84,7 +84,7 @@ const TabsCard = () => {
             </span>
           </Tab>
           <Tab
-            className={`p-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
+            className={`p-2 cursor-pointer rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
             onClick={() => handleTab("Robotic-Vehicles")}
           >
             <span className="text-xs md:text-lg md:font-semibold">

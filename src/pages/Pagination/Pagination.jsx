@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { IoIosPricetags } from "react-icons/io";
 
 const Pagination = () => {
   const [toys, setToys] = useState([]);
@@ -36,7 +37,7 @@ const Pagination = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {currentItems.map((toy) => (
           <div key={toy._id} className="p-4 bg-purple-50 shadow">
-            <div className="card w-full bg-purple-100 shadow-xl">
+            <div className="card w-full bg-purple-100 shadow-md">
               <figure className="px-10 pt-10">
                 <img
                   src={toy?.pictureURL}
@@ -46,7 +47,10 @@ const Pagination = () => {
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title">{toy.name}</h2>
-                <div className="card-actions pt-2">
+                <p className="font-semibold text-lg flex items-center gap-2">
+                  <IoIosPricetags size={20} color="#E74646" /> {toy?.price} $
+                </p>
+                <div className="card-actions">
                   <button className="my-btn-indigoPurple">Purchase</button>
                 </div>
               </div>
