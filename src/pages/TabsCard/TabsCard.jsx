@@ -12,6 +12,7 @@ const TabsCard = () => {
   const [category, setCategory] = useState([]);
   const [currentTab, setCurrentTab] = useState("Robotic-Astronauts");
 
+  
   useEffect(() => {
     fetch(`https://curious-kids-server.vercel.app/subcategory/${currentTab}`)
       .then((res) => res.json())

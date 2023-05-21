@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoIosPricetags } from "react-icons/io";
 
+
 const Pagination = () => {
   const [toys, setToys] = useState([]);
   useEffect(() => {

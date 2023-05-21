@@ -5,8 +5,11 @@ import Gallery from "../Gallery/Gallery";
 import Pagination from "../Pagination/Pagination";
 import Testimonials from "../Testimonials/Testimonials";
 import Newsletter from "../NewsLetter/NewsLetter";
+import useTitle from "../../hooks/useTitle";
+
 
 const Home = () => {
+  useTitle('Home')
   return (
     <div>
       <Banner></Banner>
