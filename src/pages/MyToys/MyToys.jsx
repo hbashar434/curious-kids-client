@@ -2,10 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+
+  useTitle("My Toys");
 
   useEffect(() => {
     fetch(`https://curious-kids-server.vercel.app/my-toys/${user?.email}`)
@@ -43,7 +46,7 @@ const MyToys = () => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire({
-                icon: 'success',
+                icon: "success",
                 title: "Deleted!",
                 text: "Your Toy has been deleted",
                 showConfirmButton: false,

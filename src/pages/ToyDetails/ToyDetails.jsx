@@ -2,7 +2,9 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import { IoIosPricetags } from "react-icons/io";
+import useTitle from "../../hooks/useTitle";
 const ToyDetails = () => {
+  useTitle("Toy Details");
   const toyDetails = useLoaderData();
   const {
     pictureURL,

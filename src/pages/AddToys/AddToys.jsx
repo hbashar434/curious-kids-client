@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
   const { register, handleSubmit, reset } = useForm();
-
+  useTitle("Add Toys");
+  
   const onSubmit = (data) => {
     fetch("https://curious-kids-server.vercel.app/all-toys", {
       method: "POST",

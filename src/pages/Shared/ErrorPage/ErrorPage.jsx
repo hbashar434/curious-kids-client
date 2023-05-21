@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import errorRobot from "../../../assets/errorRobot.avif";
+import useTitle from "../../../hooks/useTitle";
 const ErrorPage = () => {
+  useTitle("ErrorPage");
+
   return (
     <div className="grid justify-center md:mt-16">
       <img className="h-96" src={errorRobot} alt="error image" />

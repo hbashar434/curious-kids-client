@@ -10,9 +10,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 const TabsCard = () => {
   const { user } = useContext(AuthContext);
   const [category, setCategory] = useState([]);
-  const [currentTab, setCurrentTab] = useState("Robotic-Astronauts");
+  const [currentTab, setCurrentTab] = useState("Robotic-Vehicles");
 
-  
   useEffect(() => {
     fetch(`https://curious-kids-server.vercel.app/subcategory/${currentTab}`)
       .then((res) => res.json())
@@ -62,18 +61,17 @@ const TabsCard = () => {
           Dive into the realm of Robotic Astronauts, interact with adorable
           Robotic Pets, and marvel at the innovation of Robotic Vehicles. Each
           category offers a vibrant and immersive experience, perfect for
-          curious young minds to engage in a exciting learning
-          adventure!
+          curious young minds to engage in a exciting learning adventure!
         </p>
       </div>
       <Tabs>
         <TabList className="flex space-x-2 justify-center md:justify-start">
           <Tab
             className={`p-2 cursor-pointer rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
-            onClick={() => handleTab("Robotic-Astronauts")}
+            onClick={() => handleTab("Robotic-Vehicles")}
           >
             <span className="text-xs md:text-lg md:font-semibold">
-              Robotic Astronauts
+              Robotic Vehicles
             </span>
           </Tab>
           <Tab
@@ -86,10 +84,10 @@ const TabsCard = () => {
           </Tab>
           <Tab
             className={`p-2 cursor-pointer rounded-md transition duration-300 ease-in-out transform hover:scale-105 ${getRandomColor()}`}
-            onClick={() => handleTab("Robotic-Vehicles")}
+            onClick={() => handleTab("Robotic-Astronauts")}
           >
             <span className="text-xs md:text-lg md:font-semibold">
-              Robotic Vehicles
+              Robotic Astronauts
             </span>
           </Tab>
         </TabList>
@@ -101,7 +99,11 @@ const TabsCard = () => {
                 key={tab._id}
                 className={`max-w-sm pb-8 rounded overflow-hidden shadow-lg ${cardColor} hover:scale-105 transition duration-500 ease-in-out transform hover:rotate-3 hover:shadow-2xl`}
               >
-                <img className="w-full" src={tab?.pictureURL} alt={tab?.name} />
+                <img
+                  className="w-full h-48 md:h-60"
+                  src={tab?.pictureURL}
+                  alt={tab?.name}
+                />
                 <div className="px-4 py-3 sm:px-6 lg:px-4">
                   <div className="flex gap-2">
                     <div className="font-bold text-xl sm:text-2xl text-purple-900 mb-2">
@@ -151,7 +153,11 @@ const TabsCard = () => {
                 key={tab._id}
                 className={`max-w-sm pb-8 rounded overflow-hidden shadow-lg ${cardColor} hover:scale-105 transition duration-500 ease-in-out transform hover:rotate-3 hover:shadow-2xl`}
               >
-                <img className="w-full" src={tab?.pictureURL} alt={tab?.name} />
+                <img
+                  className="w-full h-48 md:h-60"
+                  src={tab?.pictureURL}
+                  alt={tab?.name}
+                />
                 <div className="px-4 py-3 sm:px-6 lg:px-4">
                   <div className="flex gap-2">
                     <div className="font-bold text-xl sm:text-2xl text-purple-900 mb-2">
@@ -201,7 +207,11 @@ const TabsCard = () => {
                 key={tab._id}
                 className={`max-w-sm pb-8 rounded overflow-hidden shadow-lg ${cardColor} hover:scale-105 transition duration-500 ease-in-out transform hover:rotate-3 hover:shadow-2xl`}
               >
-                <img className="w-full" src={tab?.pictureURL} alt={tab?.name} />
+                <img
+                  className="w-full h-48 md:h-60"
+                  src={tab?.pictureURL}
+                  alt={tab?.name}
+                />
                 <div className="px-4 py-3 sm:px-6 lg:px-4">
                   <div className="flex gap-2">
                     <div className="font-bold text-xl sm:text-2xl text-purple-900 mb-2">

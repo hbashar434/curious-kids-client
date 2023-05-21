@@ -2,12 +2,15 @@ import React, { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const { user } = useContext(AuthContext);
   const toyCollection = useLoaderData();
   const [toys, setToys] = useState(toyCollection);
   const [searchValue, setSearchValue] = useState("");
+
+  useTitle("All Toys");
 
   const handleViewDetails = () => {
     if (!user) {

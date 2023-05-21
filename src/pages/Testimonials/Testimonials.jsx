@@ -3,7 +3,6 @@ import StarRatings from "react-star-ratings";
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
-  console.log(reviews);
 
   useEffect(() => {
     fetch("https://curious-kids-server.vercel.app/reviews")
@@ -26,7 +25,7 @@ const Testimonials = () => {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {reviews.map((item) => (
           <div
-            key={item._id}
+            key={item?._id}
             className="max-w-lg mx-auto bg-white rounded-lg shadow-sm border-2 py-6 px-8 flex flex-col justify-between h-full"
           >
             <div className="flex items-center mb-4">
@@ -50,7 +49,7 @@ const Testimonials = () => {
                 name="rating"
               />
               <span className="text-yellow-500 font-semibold text-lg mt-1 mr-1">
-               {item?.rating}
+                {item?.rating}
               </span>
             </div>
           </div>

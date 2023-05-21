@@ -12,7 +12,7 @@ const Pagination = () => {
       });
   }, []);
 
-  const itemsPerPage = 3;
+  const itemsPerPage = 4;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(toys.length / itemsPerPage);
 
@@ -35,15 +35,15 @@ const Pagination = () => {
           robot toys.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {currentItems.map((toy) => (
           <div key={toy._id} className="p-4 bg-purple-50 shadow">
             <div className="card w-full bg-purple-100 shadow-md">
-              <figure className="px-10 pt-10">
+              <figure className="px-10 md:px-6 pt-10 md:pt-8">
                 <img
                   src={toy?.pictureURL}
                   alt="Shoes"
-                  className="rounded-xl h-36 md:h-48 w-72"
+                  className="rounded-xl h-36 w-72"
                 />
               </figure>
               <div className="card-body items-center text-center">

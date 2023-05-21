@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import robotKids from "../../assets/robotKids.avif";
+import robotKids from "../../assets/robotKids.png";
 
 const Banner = () => {
   return (

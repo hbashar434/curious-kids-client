@@ -7,9 +7,8 @@ import Testimonials from "../Testimonials/Testimonials";
 import Newsletter from "../NewsLetter/NewsLetter";
 import useTitle from "../../hooks/useTitle";
 
-
 const Home = () => {
-  useTitle('Home')
+  useTitle("Home");
   return (
     <div>
       <Banner></Banner>
