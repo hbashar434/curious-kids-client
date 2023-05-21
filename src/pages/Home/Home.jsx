@@ -3,9 +3,10 @@ import Banner from "../Banner/Banner";
 import TabsCard from "../TabsCard/TabsCard";
 import Gallery from "../Gallery/Gallery";
 import Pagination from "../Pagination/Pagination";
-import Testimonials from "../Testimonials/Testimonials";
 import Newsletter from "../NewsLetter/NewsLetter";
 import useTitle from "../../hooks/useTitle";
+import ReviewSlider from "../ReviewSlider/ReviewSlider";
+
 
 const Home = () => {
   useTitle("Home");
@@ -15,7 +16,7 @@ const Home = () => {
       <Pagination></Pagination>
       <Gallery></Gallery>
       <TabsCard></TabsCard>
-      <Testimonials></Testimonials>
+      <ReviewSlider></ReviewSlider>
       <Newsletter></Newsletter>
     </div>
   );
