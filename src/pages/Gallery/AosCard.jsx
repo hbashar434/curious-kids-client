@@ -18,7 +18,7 @@ const AosCard = ({ animation, picture }) => {
     >
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
         <img
-          className="w-full h-80 object-cover"
+          className="w-full h-64 object-cover"
           src={picture}
           alt="Card Image"
         />

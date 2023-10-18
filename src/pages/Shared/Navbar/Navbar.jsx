@@ -76,8 +76,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="p-0 md:px-4">
-      <div className="navbar">
+    <div className=" drop-shadow my-bg-pink">
+      <div className="navbar max-w-[1440px] container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

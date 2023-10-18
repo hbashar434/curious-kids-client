@@ -17,6 +17,7 @@ const ReviewSlider = () => {
           display: "block",
           background: "#9384D1",
           paddingTop: "1px",
+          borderRadius: '100%'
         }}
         onClick={onClick}
       />
@@ -33,6 +34,7 @@ const ReviewSlider = () => {
           display: "block",
           background: "#9384D1",
           paddingTop: "1px",
+          borderRadius: '100%'
         }}
         onClick={onClick}
       />
@@ -61,12 +63,11 @@ const ReviewSlider = () => {
     <div className="my-10 md:my-24 px-4 md:px-8">
       <div className="mb-4 md:mb-10 md:w-6/12 md:mx-auto md:text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">
-          Thrilled Customers Share Their Love for Robot Toys!
+          Thrilled Customers Share Their Love
         </h2>
         <p className="md:text-lg text-gray-700 mt-4">
           Customers are thrilled with our mesmerizing robot toys. From
-          interactive play to educational experiences, these toys deliver
-          endless excitement.
+          interactive play to educational experiences, these toys deliver endless excitement.
         </p>
       </div>
       <div className="text-center w-9/12 mx-auto">

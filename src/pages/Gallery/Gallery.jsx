@@ -2,7 +2,7 @@ import AosCard from "./AosCard";
 
 const Gallery = () => {
   return (
-    <div className="my-10 md:my-24 px-4 md:px-8">
+    <div className="my-10 md:my-24 px-4 md:px-24">
       <div className="mb-4 md:mb-10 md:w-6/12 md:mx-auto md:text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">
           Step into the Future with these Robots

@@ -3,8 +3,8 @@ import logo from "../../../assets/logo.png";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer p-10">
+    <div className="max-w-[1440px] container mx-auto">
+      <footer className="footer py-10">
         <div>
           <span className="text-2xl font-bold text-gray-600">Curious Kids</span>
           <p className="text-lg">Collect Yours Favorite Toys</p>

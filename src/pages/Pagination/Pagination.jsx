@@ -44,23 +44,24 @@ const Pagination = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {currentItems.map((toy) => (
-          <div key={toy._id} className="p-4 bg-purple-50 shadow">
-            <div className="card w-full bg-purple-100 shadow-md">
-              <figure className="px-10 md:px-6 pt-10 md:pt-8">
-                <img
-                  src={toy?.pictureURL}
-                  alt="Shoes"
-                  className="rounded-xl h-36 w-72"
-                />
-              </figure>
-              <div className="card-body items-center text-center">
-                <h2 className="card-title">{toy.name}</h2>
-                <p className="font-semibold text-lg flex items-center gap-2">
-                  <IoIosPricetags size={20} color="#E74646" /> {toy?.price} $
-                </p>
-                <div className="card-actions">
-                  <button className="my-btn-indigoPurple">Purchase</button>
-                </div>
+          <div
+            key={toy._id}
+            className="card w-full bg-purple-100 hover:shadow-md"
+          >
+            <figure className="px-10 md:px-6 pt-10 md:pt-8">
+              <img
+                src={toy?.pictureURL}
+                alt="Toy"
+                className="rounded-xl h-36 w-72"
+              />
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="card-title">{toy.name}</h2>
+              <p className="font-semibold text-lg flex items-center gap-2">
+                <IoIosPricetags size={20} color="#E74646" /> {toy?.price} $
+              </p>
+              <div className="card-actions">
+                <button className="my-btn-indigoPurple">Purchase</button>
               </div>
             </div>
           </div>
